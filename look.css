@@ -167,8 +167,8 @@ canvas {
 /**/
 .info-icon {
     position: absolute;
-    top: 25px;
-    right: 80px;
+    top: 30px;
+    right: 90px;
     width: 25px;
     height: 25px;
     background: rgba(137, 207, 240, 0.1);
@@ -291,3 +291,4 @@ canvas {
         height: 30px;
     }
 }
+
