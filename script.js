@@ -176,10 +176,10 @@ if (menuBtn && navMenu) {
     });
 }
 
-// --- 9. KEYBOARD CONTROLLER (MINIMALIST MODE) ---
+//
 window.addEventListener('keydown', (e) => {
     switch (e.key.toLowerCase()) {
-        // Tekan 'F' buat Fullscreen / Exit
+        //
         case 'f':
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen().catch(err => {
@@ -190,9 +190,9 @@ window.addEventListener('keydown', (e) => {
             }
             break;
 
-        // Tekan 'Space' (Spasi) buat Play/Pause Musik
+        //
         case ' ':
-            e.preventDefault(); // Biar layar gak scroll ke bawah
+            e.preventDefault();
             if (lagu.paused) {
                 lagu.play().catch(e => console.log("Klik layar dulu sekali Jul!"));
                 console.log("Musik jalan!");
@@ -202,7 +202,7 @@ window.addEventListener('keydown', (e) => {
             }
             break;
 
-        // Tekan 'N' buat Next Track (Lagu Berikutnya)
+        //
         case 'n':
             currentTrack = (currentTrack + 1) % playlist.length;
             loadTrack(currentTrack);
@@ -212,24 +212,23 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-// --- 10. LOGIKA INFO MODAL ---
+//
 const infoBtn = document.getElementById('infoBtn');
 const infoOverlay = document.getElementById('infoOverlay');
 
-// Buka modal pas tombol i diklik
+//
 infoBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Biar gak langsung ketutup pas diklik
+    e.stopPropagation();
     infoOverlay.style.display = 'flex';
 });
 
-// Tutup modal pas klik dimana aja di layar
 window.addEventListener('click', () => {
     if (infoOverlay.style.display === 'flex') {
         infoOverlay.style.display = 'none';
     }
 });
 
-// Biar pas klik di dalem kartu infonya gak ikutan nutup
+//
 infoOverlay.querySelector('.info-card').addEventListener('click', (e) => {
     e.stopPropagation();
 });
@@ -269,4 +268,5 @@ const isHighEnd = !isMobile && window.devicePixelRatio > 1.5;
 const asteroidCount = isMobile ? 150 : (isHighEnd ? 400 : 250);
 const belt1Count = isMobile ? 80 : 200;
 const belt2Count = isMobile ? 150 : 400;
+
 
